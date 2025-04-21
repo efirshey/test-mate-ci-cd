@@ -21,7 +21,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  github-task-job:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     env:
@@ -30,7 +30,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - run: echo "${{ env.github-task-job }} - ${{ env.CONFIG_TYPE }} - ${{ env.PYTHON_VERSION }}"
+    - run: echo "echo ${{ env.GITHUB_ACTIONS }} - ${{ env.CONFIG_TYPE }} - ${{ env.PYTHON_VERSION }}"
     - run: echo "Job was triggered by event ${{ github.event_name }}"
     - run: echo "This job executed on a runned with os ${{ runner.os }}"
     - run: echo "Name of the branch ${{ github.ref }} and your repository ${{ github.repository }}"
